@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  /* Custom color palette */
+  --color-primary: #FF914D; /* Warm Orange */
+  --color-secondary: #FFD166; /* Soft Yellow */
+  --color-background: #FFF7E0; /* Cream White */
+  --color-text: #333333; /* Charcoal Gray */
+  --color-accent: #8B5E3C; /* Brown */
+
+  /* Font sizes */
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 32px;
+
+  /* Font families */
+  --font-sans: 'Arial', sans-serif;
+  --font-serif: 'Times New Roman', serif;
+}
+
+@layer base {
+  /* Global styles for headings and paragraphs */
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+
+  h1 {
+    font-size: var(--font-size-xxl);
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: var(--font-size-xl);
+    color: var(--color-secondary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+}
+
+@layer components {
+  /* Custom button styles */
+  .button {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem; /* Rounded corners */
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  .button:hover {
+    background-color: var(--color-accent); /* Darker orange */
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+
+  .button:active {
+    transform: scale(0.95); /* Press effect */
+  }
+}
