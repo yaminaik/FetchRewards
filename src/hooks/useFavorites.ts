@@ -1,6 +1,5 @@
 import { useState, useCallback } from "react";
 import { toast } from "react-hot-toast";
-
 interface Dog {
   id: string;
   img: string;

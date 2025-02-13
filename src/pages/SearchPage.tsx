@@ -8,14 +8,7 @@ import { useDogs } from "../hooks/useDogs"; // ✅ Fetch dogs
 import { useBreeds } from "../hooks/useBreeds"; // ✅ Fetch breeds
 import { useFavorites } from "../hooks/useFavorites"; // ✅ Manage favorites
 
-interface Dog {
-  id: string;
-  img: string;
-  name: string;
-  age: number;
-  zip_code: string;
-  breed: string;
-}
+
 
 const SearchPage = () => {
   const [ageMin, setAgeMin] = useState<number | "">("");
@@ -69,7 +62,14 @@ const SearchPage = () => {
         ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {dogs.map((dog) => (
-            <DogCard key={dog.id} dog={dog} toggleFavorite={toggleFavorite} favorites={favorites} />
+           <DogCard 
+           key={dog.id} 
+           dog={dog} 
+           toggleFavorite={toggleFavorite} 
+           isFavorite={favorites.some(favDog => favDog.id === dog.id)} 
+         />
+         
+
             ))}
         </div>
         )}

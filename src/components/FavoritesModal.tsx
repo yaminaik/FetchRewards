@@ -1,5 +1,11 @@
-import { Dog } from '../types/types';
-
+interface Dog {
+  id: string;
+  img: string;
+  name: string;
+  age: number;
+  zip_code: string;
+  breed: string;
+}
 interface FavoritesModalProps {
   isOpen: boolean;
   closeModal: () => void;
