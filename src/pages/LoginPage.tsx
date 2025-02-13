@@ -18,7 +18,7 @@ const Login = ({ onLogin }: { onLogin: () => void }) => {
       const response = await fetch("https://frontend-take-home-service.fetch.com/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        credentials: "same-origin",
+        credentials: "include",
         body: JSON.stringify({ name, email }),
       });
 
