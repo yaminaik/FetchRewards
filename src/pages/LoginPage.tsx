@@ -21,6 +21,9 @@ const Login = ({ onLogin }: { onLogin: () => void }) => {
         credentials: "include",
         body: JSON.stringify({ name, email }),
       });
+    const responseBody = await response.text(); 
+    console.log("Login Response Status:", response.status);
+    console.log("Login Response Body:", responseBody);
 
       if (!response.ok) throw new Error("Authentication failed. Please check your details.");
 
