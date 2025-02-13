@@ -1,3 +1,5 @@
+import { Dog } from '../types/types';
+
 interface FavoritesModalProps {
   isOpen: boolean;
   closeModal: () => void;

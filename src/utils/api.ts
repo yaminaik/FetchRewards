@@ -1,3 +1,4 @@
+import { Dog } from '../types/types';
 export const API_BASE = "https://frontend-take-home-service.fetch.com";
 
 /** Fetch all breeds */

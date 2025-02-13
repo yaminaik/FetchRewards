@@ -4,7 +4,6 @@ import { toast } from "react-hot-toast";
 
 export const useBreeds = () => {
   const [breeds, setBreeds] = useState<string[]>([]);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadBreeds = async () => {
@@ -14,7 +13,7 @@ export const useBreeds = () => {
 
         setBreeds(breedsData);
       } catch (err) {
-        setError("Failed to fetch breeds.");
+
         toast.error("Error fetching breeds.");
         setBreeds([]); // Ensure breeds is always an array
       }

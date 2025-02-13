@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { fetchDogs, fetchDogDetails } from "../utils/api";
 import { toast } from "react-hot-toast";
+import { Dog } from '../types/types';
 
 export const useDogs = (
   currentPage: number,

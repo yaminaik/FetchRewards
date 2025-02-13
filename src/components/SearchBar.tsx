@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Dog, Search as SearchIcon, ArrowUpDown, Heart } from "lucide-react";
+
+import { Dog, ArrowUpDown } from "lucide-react";
 
 interface SearchBarProps {
   breeds: string[];
