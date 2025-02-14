@@ -1,11 +1,4 @@
-interface Dog {
-  id: string;
-  img: string;
-  name: string;
-  age: number;
-  zip_code: string;
-  breed: string;
-}
+import { Dog } from "../types";
 export const API_BASE = "https://frontend-take-home-service.fetch.com";
 
 /** Fetch all breeds */

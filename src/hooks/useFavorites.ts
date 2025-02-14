@@ -1,13 +1,6 @@
 import { useState, useCallback } from "react";
 import { toast } from "react-hot-toast";
-interface Dog {
-  id: string;
-  img: string;
-  name: string;
-  age: number;
-  zip_code: string;
-  breed: string;
-}
+import { Dog } from "../types";
 
 const API_BASE = "https://frontend-take-home-service.fetch.com";
 
@@ -20,7 +13,7 @@ export const useFavorites = () => {
     setFavorites((prev) => {
       const isFavorite = prev.some((fav) => fav.id === dog.id);
       return isFavorite ? prev.filter((fav) => fav.id !== dog.id) : [...prev, dog];
-    });
+    }); 
   
     // ✅ Move toast outside the state update function
     setTimeout(() => {

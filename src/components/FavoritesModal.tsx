@@ -1,16 +1,9 @@
-interface Dog {
-  id: string;
-  img: string;
-  name: string;
-  age: number;
-  zip_code: string;
-  breed: string;
-}
+import { Dog } from "../types";
 interface FavoritesModalProps {
   isOpen: boolean;
   closeModal: () => void;
   favorites: Dog[];
-  removeFavorite: (dogId: string) => void;  // ✅ Ensure function is typed correctly
+  removeFavorite: (dogId: string) => void;
   clearFavorites: () => void;
   generateMatch: () => void;
   matchedDog: Dog | null;

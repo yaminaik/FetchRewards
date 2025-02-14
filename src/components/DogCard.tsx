@@ -1,14 +1,6 @@
 // src/components/DogCard.tsx
-import { Dog } from "lucide-react"
-interface Dog {
-  id: string;
-  img: string;
-  name: string;
-  age: number;
-  zip_code: string;
-  breed: string;
-}
-
+import { Dog as DogIcon } from "lucide-react";
+import { Dog } from "../types";
 interface DogProps {
   dog: Dog;
   toggleFavorite: (dog: Dog) => void;
@@ -25,7 +17,7 @@ const DogCard: React.FC<DogProps> = ({ dog, toggleFavorite, isFavorite }) => {
           onClick={() => toggleFavorite(dog)}
           className="absolute top-3 right-3 p-2 rounded-full bg-white shadow-md hover:bg-gray-200 transition"
         >
-          <Dog className={`h-6 w-6 ${isFavorite ? "text-primary" : "text-gray-500"}`} />
+          <DogIcon className={`h-6 w-6 ${isFavorite ? "text-primary" : "text-gray-500"}`} />
         </button>
       </div>
       <div className="p-4">
