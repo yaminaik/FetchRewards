@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import LoginPage from "./pages/LoginPage";
 import SearchPage from "./pages/SearchPage";
 import { Toaster } from "react-hot-toast"; // ✅ Import Toaster for toast notifications
+import ProfilePage from "./pages/ProfilePage";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
@@ -24,8 +25,13 @@ const App = () => {
           }
         />
         <Route
-          path="/search"
-          element={isAuthenticated ? <SearchPage /> : <Navigate to="/" replace />}
+  path="/search"
+  element={isAuthenticated ? <SearchPage onLogout={() => setIsAuthenticated(false)} /> : <Navigate to="/" replace />}
+/>
+
+           <Route
+          path="/profile"
+          element={isAuthenticated ? <ProfilePage /> : <Navigate to="/" replace />}
         />
       </Routes>
     </Router>

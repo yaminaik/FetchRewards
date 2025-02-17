@@ -1,4 +1,6 @@
+import { useProfile } from "../hooks/useProfile";
 import { Dog } from "../types";
+
 interface FavoritesModalProps {
   isOpen: boolean;
   closeModal: () => void;
@@ -13,11 +15,13 @@ const FavoritesModal: React.FC<FavoritesModalProps> = ({
   isOpen,
   closeModal,
   favorites,
-  removeFavorite,  // ✅ Ensure function is received correctly
+  removeFavorite,
   clearFavorites,
   generateMatch,
   matchedDog,
 }) => {
+  const { saveMatch, profile } = useProfile();
+
   if (!isOpen) return null;
 
   return (
@@ -49,7 +53,7 @@ const FavoritesModal: React.FC<FavoritesModalProps> = ({
                   <span className="text-sm text-gray-600">Location: {dog.zip_code}</span>
                 </div>
                 <button
-                  onClick={() => removeFavorite(dog.id)} // ✅ Correctly calls the function
+                  onClick={() => removeFavorite(dog.id)}
                   className="bg-primary text-white py-1 px-3 rounded-md hover:bg-primary/90 transition-all"
                 >
                   ✖
@@ -65,6 +69,7 @@ const FavoritesModal: React.FC<FavoritesModalProps> = ({
           </button>
         )}
 
+        {/* Save Matched Dog to Profile */}
         {matchedDog && (
           <div className="mt-4 p-4 border rounded-lg bg-gray-100">
             <h3 className="text-xl font-semibold text-primary">Your Match:</h3>
@@ -76,6 +81,13 @@ const FavoritesModal: React.FC<FavoritesModalProps> = ({
                 <p className="text-sm text-gray-600">Age: {matchedDog.age} years</p>
               </div>
             </div>
+            <button
+              onClick={() => saveMatch(matchedDog)}
+              className="w-full bg-green-500 text-white py-2 rounded-lg mt-4 hover:bg-green-600 transition-all"
+              disabled={profile.matches.some((match) => match.id === matchedDog.id)}
+            >
+              {profile.matches.some((match) => match.id === matchedDog.id) ? "Already Saved" : "Save Match"}
+            </button>
           </div>
         )}
       </div>
