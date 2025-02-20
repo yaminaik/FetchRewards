@@ -45,16 +45,15 @@
 
 ## 🚀 Installation & Running Locally
 
-1️⃣ **Clone the repository**  
+**Clone the repository**  
 ```sh
 git clone https://github.com/yourusername/fetch-dog-app.git
 cd fetch-dog-app
 
-
-2️⃣ **Install dependencies**  
+- **Install**
 npm install
 
-3️⃣ **Start the development server**  
+- **Start the development server**  
 npm run dev
 
 The app should now be running at http://localhost:5173/.
