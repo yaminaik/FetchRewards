@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Dog, Mail, User } from "lucide-react";
-import toast from "react-hot-toast"; // ✅ Importing toast correctly
+import toast from "react-hot-toast"; 
 
 const Login = ({ onLogin }: { onLogin: () => void }) => {
   const [name, setName] = useState("");
@@ -9,7 +9,7 @@ const Login = ({ onLogin }: { onLogin: () => void }) => {
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  // ✅ Use useCallback to optimize function reference
+ 
   const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -27,12 +27,12 @@ const Login = ({ onLogin }: { onLogin: () => void }) => {
 
       if (!response.ok) throw new Error("Authentication failed. Please check your details.");
 
-      toast.success(`Woof! Welcome back, ${name}! 🐾`); // ✅ Toast should work now
+      toast.success(`Woof! Welcome back, ${name}! 🐾`); 
       onLogin();
       navigate("/search");
     } catch (err) {
       setError("Failed to log in. Please try again.");
-      toast.error("Failed to log in. Please try again."); // ✅ Error toast should now appear
+      toast.error("Failed to log in. Please try again.");
     }
   }, [name, email, navigate, onLogin]);
 

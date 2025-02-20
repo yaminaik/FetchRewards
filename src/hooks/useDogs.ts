@@ -26,7 +26,9 @@ export const useDogs = (
 
   const loadDogs = useCallback(async () => {
     setLoading(true);
+    setDogs([]); 
     setError(null);
+
     try {
       let query = `size=10&from=${(currentPage - 1) * 10}&sort=breed:${sortOrder}`;
       if (selectedBreed) query += `&breeds=${encodeURIComponent(selectedBreed)}`;
@@ -37,13 +39,17 @@ export const useDogs = (
       const { resultIds, total } = await fetchDogs(query);
       setTotalResults(total);
 
-      if (resultIds.length === 0) return;
+      if (resultIds.length === 0) {
+        setDogs([]);
+        return;
+      }
 
       const dogDetails = await fetchDogDetails(resultIds);
       setDogs(dogDetails);
     } catch (error) {
       setError("Failed to fetch dogs. Please try again.");
       toast.error("Error fetching dogs.");
+      setDogs([]); 
     } finally {
       setLoading(false);
     }

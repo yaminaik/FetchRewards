@@ -83,7 +83,7 @@ const FavoritesModal: React.FC<FavoritesModalProps> = ({
             </div>
             <button
               onClick={() => saveMatch(matchedDog)}
-              className="w-full bg-green-500 text-white py-2 rounded-lg mt-4 hover:bg-green-600 transition-all"
+              className="w-full bg-primary/90    text-white py-2 rounded-lg mt-4 hover:bg-orange-800 transition-all"
               disabled={profile.matches.some((match) => match.id === matchedDog.id)}
             >
               {profile.matches.some((match) => match.id === matchedDog.id) ? "Already Saved" : "Save Match"}

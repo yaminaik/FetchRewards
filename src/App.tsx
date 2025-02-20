@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { useState, useEffect } from "react";
 import LoginPage from "./pages/LoginPage";
 import SearchPage from "./pages/SearchPage";
-import { Toaster } from "react-hot-toast"; // ✅ Import Toaster for toast notifications
+import { Toaster } from "react-hot-toast"; 
 import ProfilePage from "./pages/ProfilePage";
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <Router>
-      <Toaster position="top-right" reverseOrder={false} /> {/* ✅ Global Toast Notifications */}
+      <Toaster position="top-right" reverseOrder={false} />
       <Routes>
         <Route
           path="/"

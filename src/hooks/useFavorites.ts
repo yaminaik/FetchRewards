@@ -15,7 +15,7 @@ export const useFavorites = () => {
       return isFavorite ? prev.filter((fav) => fav.id !== dog.id) : [...prev, dog];
     }); 
   
-    // ✅ Move toast outside the state update function
+    // Move toast outside the state update function
     setTimeout(() => {
       toast.success(favorites.some((fav) => fav.id === dog.id) ? "Removed from favorites!" : "Added to favorites!");
     }, 0);
