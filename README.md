@@ -2,7 +2,7 @@
 
 🚀 **Find your perfect companion!** This is a React-based web application that helps users search for adoptable shelter dogs using various filters like **breed, age, and location (state, city, ZIP code)**. Users can also save favorites and generate a **best-match recommendation**. 
 
-🔗 **Live Demo:** [Your Deployment Link Here](#) *(⚠️ Open in Chrome for best experience due to Safari's cookie restrictions.)*
+🔗 **Live Demo:** [fetch-rewards-kappa.vercel.app](#) *(⚠️ Open in Chrome for best experience due to Safari's cookie restrictions.)*
 
 ---
 
