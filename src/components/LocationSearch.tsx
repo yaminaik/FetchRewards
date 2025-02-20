@@ -39,7 +39,7 @@ const LocationSearch = ({ setLocationZipCodes, setLoading }: LocationSearchProps
   };
 
   const clearFilters = () => {
-    setLocationZipCodes([]);
+    setLocationZipCodes([...[]]);
     setSelectedState("");
     setSelectedCity("");
     setSelectedZip("");
